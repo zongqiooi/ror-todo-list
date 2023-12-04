@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todos</h1>
+
+<div id="todos">
+  <% @todos.each do |todo| %>
+    <%= render todo %>
+    <p style="display: inline">
+      <div style="display: inline-flex; gap: 10px ">
+        <%= link_to 'show', todo %>
+        <%= button_to 'destroy', todo, method: :delete %>
+      </div>
+    </p>
+    <br />
+  <% end %>
+</div>
+<br />
+<br />
+<%= link_to 'Create New Todo', new_todo_path %>
